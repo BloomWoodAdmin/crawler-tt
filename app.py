@@ -121,10 +121,15 @@ def find_avg_views(driver, link):
 def my_form():
     return render_template('index.html')
 
+
+
 @app.route('/', methods=['POST'])
 def my_form_post():
-    variable = request.form['variable']
-    return variable
+    tag = request.form['tag_variable']
+    views = request.form['views']
+    scroll_time = request.form['scroll_time']
+    date = request.form['date']
+    return tag, views, scroll_time, date
 
 def main():
     print('如果需要爬去#hashtag内容，在输入项添加#，example: #music, #comedy, #saudiarabia')
@@ -139,6 +144,7 @@ def main():
 
     # Convert the date and time to an integer using the timestamp() method
 
+    tag, avg_views, time_to_scrape, date_to_search = my_form_post()
 
     time_stamp = ''
 
@@ -236,6 +242,6 @@ def main():
 
 
 if __name__ == '__main__':
-    my_form_post()
+    my_form()
 else:
     print('Not running from main')
