@@ -4,3 +4,4 @@ selenium
 webdriver_manager
 bs4
 numpy
+gunicorn==21.2.0
