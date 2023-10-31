@@ -1,4 +1,5 @@
 import pandas as pd
+from flask import Flask
 import os.path
 from datetime import datetime
 import selenium
@@ -31,6 +32,7 @@ opts.add_experimental_option('excludeSwitches',['enable-logging'])
 opts.add_argument('--log-level=3')
 opts.add_experimental_option('prefs', {'intl.accept_languages': 'en,en_US'})
 
+app = Flask(__name__)
 
 # set up the webdriver
 driver = webdriver.Chrome(options=opts)
@@ -115,6 +117,7 @@ def find_avg_views(driver, link):
 
   return sum(views) / len(views)
 
+@app.route('/')
 def main():
     print('如果需要爬去#hashtag内容，在输入项添加#，example: #music, #comedy, #saudiarabia')
     print('若是爬取search bar项目则不需要添加') 
