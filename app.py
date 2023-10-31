@@ -243,6 +243,6 @@ def main(tag, avg_views, time_to_scrape, date_to_search):
 
 
 if __name__ == '__main__':
-    main()
+    my_form()
 else:
     print('Not running from main')
