@@ -118,6 +118,14 @@ def find_avg_views(driver, link):
   return sum(views) / len(views)
 
 @app.route('/')
+def my_form():
+    return render_template('index.html')
+
+@app.route('/', methods=['POST'])
+def my_form_post():
+    variable = request.form['variable']
+    return variable
+
 def main():
     print('如果需要爬去#hashtag内容，在输入项添加#，example: #music, #comedy, #saudiarabia')
     print('若是爬取search bar项目则不需要添加') 
@@ -228,6 +236,6 @@ def main():
 
 
 if __name__ == '__main__':
-    main()
+    my_form_post()
 else:
     print('Not running from main')
