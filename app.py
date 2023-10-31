@@ -24,9 +24,9 @@ import time
 import json
 import pickle
 
-#opts.add_argument('--headless')
+opts.add_argument('--headless')
 opts.add_argument('--disable-gpu')
-#opts.add_argument('--headless=new')
+opts.add_argument('--headless=new')
 opts.add_experimental_option('excludeSwitches',['enable-logging'])
 opts.add_argument('--log-level=3')
 opts.add_experimental_option('prefs', {'intl.accept_languages': 'en,en_US'})
