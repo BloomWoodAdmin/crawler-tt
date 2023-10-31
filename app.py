@@ -117,9 +117,9 @@ def find_avg_views(driver, link):
 
   return sum(views) / len(views)
 
-@app.route('/')
-def my_form():
-    return render_template('index.html')
+#@app.route('/')
+#def my_form():
+#    return 
 
 
 @app.route('/', methods=['POST'])
@@ -128,8 +128,13 @@ def my_form_post():
     views = request.form['views']
     scroll_time = request.form['scroll_time']
     date = request.form['date']
+
+    print(tag)
+    print(views)
+    print(scroll_time)
+    print(date)
     
-    return tag, views, scroll_time, date
+    return render_template('index.html')
     #, views, scroll_time, date
 
 def main(tag, avg_views, time_to_scrape, date_to_search):
@@ -243,6 +248,6 @@ def main(tag, avg_views, time_to_scrape, date_to_search):
 
 
 if __name__ == '__main__':
-    my_form()
+    my_form_post()
 else:
     print('Not running from main')
