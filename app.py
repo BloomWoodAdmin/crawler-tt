@@ -125,19 +125,20 @@ def my_form():
 @app.route('/', methods=['POST'])
 def my_form_post():
     tag = request.form['tag_variable']
-    #views = request.form['views']
-    #scroll_time = request.form['scroll_time']
-    #date = request.form['date']
-    return tag
+    views = request.form['views']
+    scroll_time = request.form['scroll_time']
+    date = request.form['date']
+    
+    return tag, views, scroll_time, date
     #, views, scroll_time, date
 
-def main():
-    print('如果需要爬去#hashtag内容，在输入项添加#，example: #music, #comedy, #saudiarabia')
-    print('若是爬取search bar项目则不需要添加') 
-    tag = input('请输入需要爬取的关键词 (多项爬取使用\',\'隔开): ')
-    avg_views = func()
-    time_to_scrape = func_2()
-    date_to_search = input('请输入日期, 无需要直接回撤, 格式为20xx-xx-xx(年-月-日): ')
+def main(tag, avg_views, time_to_scrape, date_to_search):
+    #print('如果需要爬去#hashtag内容，在输入项添加#，example: #music, #comedy, #saudiarabia')
+    #print('若是爬取search bar项目则不需要添加') 
+    #tag = input('请输入需要爬取的关键词 (多项爬取使用\',\'隔开): ')
+    #avg_views = func()
+    #time_to_scrape = func_2()
+    #date_to_search = input('请输入日期, 无需要直接回撤, 格式为20xx-xx-xx(年-月-日): ')
 
     # Get the current date and time
     driver = webdriver.Chrome(options=opts)
