@@ -122,7 +122,6 @@ def my_form():
     return render_template('index.html')
 
 
-
 @app.route('/', methods=['POST'])
 def my_form_post():
     tag = request.form['tag_variable']
@@ -242,6 +241,6 @@ def main():
 
 
 if __name__ == '__main__':
-    my_form()
+    main()
 else:
     print('Not running from main')
